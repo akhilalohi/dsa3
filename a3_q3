@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+int main() {
+    int N, X;
+    printf("Enter the size of the vector: ");
+    scanf("%d", &N);
+    
+    int vector[N];
+    
+    printf("Enter %d positive integers: ", N);
+    for (int i = 0; i < N; i++) {
+        scanf("%d", &vector[i]);
+    }
+    
+    printf("Enter the integer X to find its frequency: ");
+    scanf("%d", &X);
+    
+    int frequency = 0;
+    
+    for (int i = 0; i < N; i++) {
+        if (vector[i] == X) {
+            frequency++;
+        }
+    }
+    
+    printf("The frequency of %d in the vector is: %d\n", X, frequency);
+    
+    return 0;
+}
+
+
