@@ -1,0 +1,35 @@
+#include <stdio.h>
+#include <stdbool.h>
+
+bool checkSortedAndRotated(int* nums, int numsSize) {
+    int count = 0;
+    
+    for (int i = 0; i < numsSize; i++) {
+        if (nums[i] > nums[(i + 1) % numsSize]) {
+            count++;
+        }
+        
+        if (count > 1) {
+            return false;
+        }
+    }
+    
+    return true;
+}
+
+int main() {
+    int nums[] = {2, 3, 4, 1};
+    int numsSize = sizeof(nums) / sizeof(nums[0]);
+    
+    bool result = checkSortedAndRotated(nums, numsSize);
+    
+    if (result) {
+        printf("The array was originally sorted in non-decreasing order and then rotated.\n");
+    } else {
+        printf("The array was not originally sorted in non-decreasing order and then rotated.\n");
+    }
+    
+    return 0;
+}
+
+
