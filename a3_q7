@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int findMissingNumber(int nums[], int n) {
+    int totalSum = n * (n + 1) / 2;
+    int sum = 0;
+
+    for (int i = 0; i < n; i++) {
+        sum += nums[i];
+    }
+
+    return totalSum - sum;
+}
+
+int main() {
+    int nums[] = {3, 0, 1, 4, 6, 2}; // Example input array
+    int n = sizeof(nums) / sizeof(nums[0]) + 1; // Size of the array
+
+    int missingNumber = findMissingNumber(nums, n);
+
+    printf("The missing number in the array is: %d\n", missingNumber);
+
+    return 0;
+}
+
+
